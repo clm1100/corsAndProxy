@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>测试</h1>
+    <script src="./jquery.min.js"></script>
+<script>
+$(function(){
+    // $.ajaxSetup({xhrFields: {withCredentials: true}});
+
+    $.ajax({
+        xhrFields:{withCredentials: true},
+        url:'http://localhost:5000/b',
+        headers:{clm:"qweeqeqeqeqeqeqeqweqweqweqweqwe",a:2000},
+        success:function(data){
+            console.log(data)
+        },
+        complete:(xhr,data,a)=>{
+            console.log(xhr.getAllResponseHeaders())
+            console.log(data)
+            console.log(a)
+        },
+        error:()=>{
+            alert("报错了")
+        }
+    })
+    // $.ajax({
+    //     url:'http://localhost:5000/b',
+    //     success:(data)=>{
+    //         alert(data)
+    //     },
+    //     error:()=>{
+    //         alert("报错了")
+    //     }
+    // })
+    // $.ajax()
+})
+</script>
+</body>
+</html>
