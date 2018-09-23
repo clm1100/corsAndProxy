@@ -11,16 +11,12 @@
     <script src="./jquery.min.js"></script>
 <script>
 $(function(){
-   
-    $.ajax({
-        url:'/api/b',
-        success:(data)=>{
-            alert(data)
-        },
-        error:()=>{
-            alert("报错了")
-        }
-    })
+//     $.get("http://localhost:5000/b",function(data){
+//        console.log(data);
+//    })
+   $.get("/api/b",function(data){
+       console.log(data);
+   })
 })
 </script>
 </body>
